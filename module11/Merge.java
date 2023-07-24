@@ -1,6 +1,7 @@
 package module11;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,7 +28,7 @@ public class Merge {
             result.add(iterator2.next());
         }
 
-
+        Collections.shuffle(result);
         return result.stream();
 
     }
