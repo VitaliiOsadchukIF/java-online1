@@ -13,12 +13,11 @@ public class Numbers {
 
         // Отримуємо всі числа з масиву
         List<Integer> numbers = new ArrayList<>();
-        for (String str : arr) {
-            String[] numArr = str.split(", ");
-            for (String num : numArr) {
-                numbers.add(Integer.parseInt(num));
-            }
-        }
+        arr.stream()
+                .map(str -> str.split(", "))
+                .forEachOrdered(numArr -> Arrays.stream(numArr)
+                        .map(Integer::parseInt)
+                        .forEachOrdered(numbers::add));
 
 
         System.out.printf(numbers.stream()
